@@ -3,10 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GlobalNavigatorComponent } from './flame/global-navigator/global-navigator.component';
+import { HeaderComponent } from './flame/header/header.component';
+import { Content1Component } from './content/content1/content1.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GlobalNavigatorComponent,
+    HeaderComponent,
+    Content1Component
   ],
   imports: [
     BrowserModule,
