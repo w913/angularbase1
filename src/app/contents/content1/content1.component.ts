@@ -1,4 +1,6 @@
-import { Component, OnInit, ComponentRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { YahooApiService } from '@shared/services/yahoo-api/yahoo-api.service';
 
 @Component({
   selector: 'app-content1',
@@ -6,7 +8,15 @@ import { Component, OnInit, ComponentRef } from '@angular/core';
   styleUrls: ['./content1.component.scss']
 })
 export class Content1Component implements OnInit {
-  constructor() {}
+  object = Object;
+  items;
 
-  ngOnInit() {}
+  constructor(private yahooApiService: YahooApiService) {}
+
+  ngOnInit() {
+    this.yahooApiService.getByCategoryId(12492).subscribe(result => {
+      this.items = result.ResultSet[0].Result;
+      console.log(result.ResultSet[0].Result);
+    });
+  }
 }

@@ -7,6 +7,8 @@ import { GlobalNavigatorComponent } from './flame/global-navigator/global-naviga
 import { HeaderComponent } from './flame/header/header.component';
 import { Content1Component } from './contents/content1/content1.component';
 import { SharedModule } from '@shared/shared.module';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { YahooApiService } from '@shared/services/yahoo-api/yahoo-api.service';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,14 @@ import { SharedModule } from '@shared/shared.module';
     HeaderComponent,
     Content1Component
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+    HttpClientJsonpModule
+  ],
+  providers: [YahooApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

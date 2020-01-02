@@ -1,5 +1,9 @@
-<div>
+<div *ngIf="items">
   <p>content1 works!</p>
-  <app-playground></app-playground>
-  <app-playground></app-playground>
+  <ng-container *ngFor="let key of object.keys(items)">
+    <app-playground
+      [titleImgUrl]="items[key].Image?.Medium"
+      [titleText]="items[key].Name"
+    ></app-playground>
+  </ng-container>
 </div>

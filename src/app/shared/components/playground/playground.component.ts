@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PlaygroundComponent implements OnInit {
   @Input()
-  titleImgName: string;
+  titleImgUrl: string;
   @Input()
   titleText: string;
 
